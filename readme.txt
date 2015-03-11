@@ -12,7 +12,7 @@ Easily install and manage your Goodway Pixel code.
 == Description ==
 The Goodway Group pixel manager installs your pixels for you automatically. This will allow you to track all website visitors and add them to your Goodway campaigns. 
 
-Our plugin also has full support for WooCommerce and conversion tracking. Simply install the plugin, login to your Meteora account, and return to the Meteora dashboard to start your campaigns
+Our plugin also has full support for WooCommerce and conversion tracking. Simply install the plugin, copy and paste your pixels, save, notify your Goodway Group account rep.
 
 == Installation ==
 1. Install the plugin
