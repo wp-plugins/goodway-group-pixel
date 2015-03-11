@@ -3,7 +3,7 @@
  * Plugin Name: GoodWay Pixels
  * Plugin URI: http://www.goodwaygroup.com/
  * Description: Easily integrate GoodWay's Pixel code in your blog.
- * Version: 2015.03.15
+ * Version: 2015.03.15-2
  * Author: GoodWay
  * Author URI: http://www.goodwaygroup.com/
  * License: Apache-v2.0
