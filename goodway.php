@@ -117,7 +117,7 @@ final class GoodWay {
 			<legend>Place your pixel below followed by the URL you would like it placed on:</legend>
 			<div id="pixelInfoTmpl">
 				<textarea name="goodway[pixels][p][]" placeholder="Paste your pixel here..." style="width: 463px;" rows="4"></textarea>
-				<p><input name="goodway[pixels][u][]" placeholder="Paste the page URL, for example: /awesome-product-page1" style="width: 463px;" value=""></p>
+				<p><input name="goodway[pixels][u][]" placeholder="Paste the page URL, for example: https://you.com/awesome-product-page1" style="width: 463px;" value=""></p>
 				<hr>
 			</div>
 			<div><button id="addPixel">Add another</button></div>
@@ -188,13 +188,13 @@ final class GoodWay {
 
 	public function addPixels() {
 		global $wpdb;
-		$q = $wpdb->prepare('SELECT pixel FROM `' . $this->table_name . '` WHERE url = %s;', $_SERVER['REQUEST_URI']);
+		global $post;
+		$url = get_permalink($post->ID);
+		$q = $wpdb->prepare('SELECT pixel FROM `' . $this->table_name . '` WHERE url = %s;', $url);
 		$res = $wpdb->get_results($q);
-		echo "<!-- goodway pixel -->\n";
 		foreach($res as $row) {
-			echo "\t$row->pixel\n";
+			echo "$row->pixel\n";
 		}
-		echo "\t<!-- end goodway pixel -->\n";
 	}
 }
 
