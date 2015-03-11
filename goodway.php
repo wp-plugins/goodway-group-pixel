@@ -190,11 +190,11 @@ final class GoodWay {
 		global $wpdb;
 		$q = $wpdb->prepare('SELECT pixel FROM `' . $this->table_name . '` WHERE url = %s;', $_SERVER['REQUEST_URI']);
 		$res = $wpdb->get_results($q);
-		echo '<!-- goodway pixel -->' . PHP_EOL;
+		echo "<!-- goodway pixel -->\n";
 		foreach($res as $row) {
-			echo "\t$row->pixel" . PHP_EOL;
+			echo "\t$row->pixel\n";
 		}
-		echo '	<!-- end goodway pixel -->' . PHP_EOL;
+		echo "\t<!-- end goodway pixel -->\n";
 	}
 }
 
