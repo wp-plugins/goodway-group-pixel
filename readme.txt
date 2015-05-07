@@ -1,7 +1,7 @@
 === Goodway Pixels ===
 Tags: goodway
 Requires at least: 3.5.1
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: trunk
 License: Apache-2.0
 Contributors: meteora.co
@@ -20,4 +20,5 @@ Our plugin also has full support for WooCommerce and conversion tracking. Simply
 3. Notify your account rep after saving
 
 == Changelog ==
-0.1 initial release
+2015-05-07-1 checks for empty arrays
+2015.03.15-2 initial release

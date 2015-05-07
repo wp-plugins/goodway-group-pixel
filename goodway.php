@@ -3,7 +3,7 @@
  * Plugin Name: GoodWay Pixels
  * Plugin URI: http://www.goodwaygroup.com/
  * Description: Easily integrate GoodWay's Pixel code in your blog.
- * Version: 2015.03.15-2
+ * Version: 2015.05.07
  * Author: GoodWay
  * Author URI: http://www.goodwaygroup.com/
  * License: Apache-v2.0
@@ -95,15 +95,19 @@ final class GoodWay {
 			$urls = $input['pixels']['u'];
 			$delete = $input['pixels']['d'];
 			$wpdb->query('SET autocommit = 0;');
-			for($i = 0; $i < count($pixels); $i++) {
-				$p = $pixels[$i];
-				$u = $urls[$i];
-				if(strlen($p) > 0 && strlen($u) > 0) {
-					$wpdb->insert($this->table_name, array('url' => $u, 'pixel' => $p), array('%s', '%s'));
+			if(is_array($pixels) && count($pixels) === count($urls)) {
+				for($i = 0; $i < count($pixels); $i++) {
+					$p = $pixels[$i];
+					$u = $urls[$i];
+					if(strlen($p) > 0 && strlen($u) > 0) {
+						$wpdb->insert($this->table_name, array('url' => $u, 'pixel' => $p), array('%s', '%s'));
+					}
 				}
 			}
-			foreach($delete as $id) {
-				$wpdb->delete($this->table_name, array('id' => $id ), array('%d'));
+			if(is_array($delete)) {
+				foreach($delete as $id) {
+					$wpdb->delete($this->table_name, array('id' => $id ), array('%d'));
+				}
 			}
 			$wpdb->query('COMMIT;');
 			$wpdb->query('SET autocommit = 1;');
